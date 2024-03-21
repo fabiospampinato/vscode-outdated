@@ -1,0 +1,94 @@
+{
+  "name": "vscode-outdated",
+  "displayName": "Outdated",
+  "publisher": "fabiospampinato",
+  "repository": "github:fabiospampinato/vscode-outdated",
+  "description": "A super quick way to update npm dependencies, via a code lens.",
+  "icon": "resources/logo-128x128.png",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "activationEvents": [
+    "onLanguage:json"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Outdated - Configuration",
+      "properties": {
+        "outdated.enabled": {
+          "type": "boolean",
+          "description": "Whether the code lense should be enabled or not",
+          "default": true
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "outdated.bump",
+        "title": "Outdated: Bump"
+      },
+      {
+        "command": "outdated.disable",
+        "title": "Outdated: Disable"
+      },
+      {
+        "command": "outdated.enable",
+        "title": "Outdated: Enable"
+      },
+      {
+        "command": "outdated.refresh",
+        "title": "Outdated: Refresh"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "outdated.bump",
+          "when": "false"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "bundle:dev": "tsex bundle --external vscode --format cjs --platform node --no-declare",
+    "bundle:prod": "tsex bundle --external vscode --format cjs --platform node --minify",
+    "clean": "tsex clean",
+    "compile": "tsex compile",
+    "debug": "code --extensionDevelopmentPath $PWD --inspect-extensions 9222",
+    "package": "vsce package",
+    "prepublishOnly": "scex -bs clean bundle:prod",
+    "vscode:prepublish": "scex -bs clean bundle:prod",
+    "dev": "scex -bs bundle:dev debug",
+    "prod": "scex -bs bundle:prod debug"
+  },
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "keywords": [
+    "vscode",
+    "vsc",
+    "extension",
+    "npm",
+    "outdated",
+    "update",
+    "bump",
+    "dependencies"
+  ],
+  "dependencies": {
+    "string-escape-regex": "^1.0.0",
+    "tiny-jsonc": "^1.0.1",
+    "vscode-extras": "^1.8.0",
+    "zeptoid": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.26",
+    "@types/vscode": "^1.87.0",
+    "esbuild": "0.20.2",
+    "scex": "^1.1.0",
+    "tsex": "^3.2.1",
+    "typescript": "^5.4.3"
+  }
+}
