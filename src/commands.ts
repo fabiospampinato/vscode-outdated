@@ -3,7 +3,7 @@
 
 import vscode from 'vscode';
 import Lens from './lens';
-import {escapeRegex} from './utils';
+import {escapeRegex, getOptions} from './utils';
 
 /* MAIN */
 
@@ -34,7 +34,9 @@ const bump = async ( uri: string, name: string, version: string, versionNext: st
 
 };
 
-const toggle = ( force: boolean ): void => {
+const toggle = ( force?: boolean ): void => {
+
+  force ??= !getOptions ().enabled;
 
   vscode.workspace.getConfiguration ( 'outdated' ).update ( 'enabled', force, true );
 

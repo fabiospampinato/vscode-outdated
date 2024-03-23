@@ -10,6 +10,7 @@ import Lens from './lens';
 const activate = (): void => {
 
   vscode.commands.registerCommand ( 'outdated.bump', Commands.bump );
+  vscode.commands.registerCommand ( 'outdated.toggle', Commands.toggle );
   vscode.commands.registerCommand ( 'outdated.disable', Commands.disable );
   vscode.commands.registerCommand ( 'outdated.enable', Commands.enable );
   vscode.commands.registerCommand ( 'outdated.refresh', Commands.refresh );

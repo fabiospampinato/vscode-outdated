@@ -28,6 +28,10 @@
         "title": "Outdated: Bump"
       },
       {
+        "command": "outdated.toggle",
+        "title": "Outdated: Toggle"
+      },
+      {
         "command": "outdated.disable",
         "title": "Outdated: Disable"
       },
