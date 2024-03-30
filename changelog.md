@@ -1,3 +1,6 @@
+### Version 1.1.2
+- Readme: fixed a few typos
+
 ### Version 1.1.1
 - Readme: ensuring the toggle command is mentioned too
 
