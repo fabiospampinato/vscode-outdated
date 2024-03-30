@@ -21,17 +21,17 @@ ext install fabiospampinato.vscode-outdated
 It adds 4 commands to the command palette:
 
 ```js
-'Outdated: Toggle" // Enable or disable the code lense
-'Outdated: Disable' // Disable the code lense
-'Outdated: Enable' // Enable the code lense
-'Outdated: Refresh' // Force refresh the code lense
+'Outdated: Toggle' // Enable or disable the code lens
+'Outdated: Disable' // Disable the code lens
+'Outdated: Enable' // Enable the code lens
+'Outdated: Refresh' // Force refresh the code lens
 ```
 
 ## Settings
 
 ```js
 {
-  "outdated.enabled": true // Whether the code lense is enabled or not
+  "outdated.enabled": true // Whether the code lens is enabled or not
 }
 ```
 

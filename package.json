@@ -17,7 +17,7 @@
       "properties": {
         "outdated.enabled": {
           "type": "boolean",
-          "description": "Whether the code lense should be enabled or not",
+          "description": "Whether the code lens should be enabled or not",
           "default": true
         }
       }
