@@ -6,6 +6,8 @@
 
 A super quick way to update npm dependencies, via a code lens.
 
+Clicking the code lens will update the dependency's version in the current `package.json` file.
+
 This extension requires `npm-cli` to be installed and it only works for npm dependencies listead in `package.json` files.
 
 ## Install
