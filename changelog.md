@@ -1,3 +1,6 @@
+### Version 1.1.3
+- Readme: explicitly mentioning what happens when clicking the code lense
+
 ### Version 1.1.2
 - Readme: fixed a few typos
 
