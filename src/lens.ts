@@ -3,7 +3,7 @@
 
 import JSONC from 'tiny-jsonc';
 import vscode from 'vscode';
-import {escapeRegex, getDependenciesFromPackage, getDependenciesFromRegistry, getVersionComparison, getVersionSections, getOptions} from './utils';
+import {escapeRegex, getDependenciesFromPackage, getDependenciesFromRegistry, getVersionComparison, getVersionSections, getVersionUnprefixed, getOptions} from './utils';
 
 /* MAIN */
 
@@ -48,9 +48,9 @@ class CodeLensProvider implements vscode.CodeLensProvider {
 
         if ( !currentSections ) continue; //TODO: Maybe show an error if this happens
 
-        const versionNext = wanted && getVersionComparison ( wanted, current ) === 1 ? wanted : latest;
-
-        if ( !versionNext ) continue; //TODO: Maybe show an error if this happens
+        const versionNextWanted = wanted && getVersionComparison ( wanted, current ) === 1 ? wanted : undefined;
+        const versionNextLatest = latest && getVersionComparison ( latest, current ) === 1 ? latest : undefined;
+        const versionNext = versionNextWanted || versionNextLatest || getVersionUnprefixed ( current );
 
         const lineRe = new RegExp ( `^\\s*"${escapeRegex ( name )}":\\s*"${escapeRegex ( current )}"`, 'm' );
         const lineMatch = lineRe.exec ( content );

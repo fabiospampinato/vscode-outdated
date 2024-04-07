@@ -108,8 +108,8 @@ const getVersionComparison = ( a: string, b: string ): -1 | 0 | 1 => { // -1: a 
   if ( as.patch < bs.patch ) return -1;
   if ( as.patch > bs.patch ) return 1;
 
-  if ( a < b ) return -1;
-  if ( a > b ) return 1;
+  if ( as.suffix < bs.suffix ) return -1;
+  if ( as.suffix > bs.suffix ) return 1;
 
   return 0;
 
@@ -129,6 +129,15 @@ const getVersionSections = ( version: string ): { prefix: string, major: number,
   const suffix = match[5] || '';
 
   return { prefix, major, minor, patch, suffix };
+
+};
+
+const getVersionUnprefixed = ( version: string ): string => {
+
+  const prefixRe = /^(\^|~|>=?|<=?|=)/;
+  const versionUnprefixed = version.replace ( prefixRe, '' );
+
+  return versionUnprefixed;
 
 };
 
@@ -152,4 +161,4 @@ const isString = ( value: unknown ): value is string => {
 
 /* EXPORT */
 
-export {escapeRegex, getDependenciesFromPackage, getDependenciesFromRegistry, getOptions, getVersionComparison, getVersionSections, isBoolean, isObject, isString};
+export {escapeRegex, getDependenciesFromPackage, getDependenciesFromRegistry, getOptions, getVersionComparison, getVersionSections, getVersionUnprefixed, isBoolean, isObject, isString};
