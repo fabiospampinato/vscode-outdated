@@ -9,7 +9,10 @@ type Dependency = {
 };
 
 type Options = {
-  enabled: boolean
+  enabled: boolean,
+  badges: {
+    enabled: boolean
+  }
 };
 
 /* EXPORT */

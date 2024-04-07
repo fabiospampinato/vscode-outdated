@@ -83,8 +83,9 @@ const getOptions = (): Options => {
 
   const config = getConfig ( 'outdated' );
   const enabled = isBoolean ( config?.enabled ) ? config.enabled : true;
+  const badgesEnabled = isBoolean ( config?.badges?.enabled ) ? config.badges.enabled : true;
 
-  return { enabled };
+  return { enabled, badges: { enabled: badgesEnabled } };
 
 };
 

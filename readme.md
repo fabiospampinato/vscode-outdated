@@ -33,7 +33,8 @@ It adds 4 commands to the command palette:
 
 ```js
 {
-  "outdated.enabled": true // Whether the code lens is enabled or not
+  "outdated.enabled": true, // Whether the code lens is enabled or not
+  "outdated.badges.enabled": true // Whether the inline badges should be rendered or not
 }
 ```
 
