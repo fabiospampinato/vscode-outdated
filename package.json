@@ -33,16 +33,20 @@
         "title": "Outdated: Bump"
       },
       {
-        "command": "outdated.toggle",
-        "title": "Outdated: Toggle"
-      },
-      {
         "command": "outdated.disable",
         "title": "Outdated: Disable"
       },
       {
         "command": "outdated.enable",
         "title": "Outdated: Enable"
+      },
+      {
+        "command": "outdated.toggle",
+        "title": "Outdated: Toggle"
+      },
+      {
+        "command": "outdated.toggleBadges",
+        "title": "Outdated: Toggle Badges"
       },
       {
         "command": "outdated.refresh",

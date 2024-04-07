@@ -34,14 +34,6 @@ const bump = async ( uri: string, name: string, version: string, versionNext: st
 
 };
 
-const toggle = ( force?: boolean ): void => {
-
-  force ??= !getOptions ().enabled;
-
-  vscode.workspace.getConfiguration ( 'outdated' ).update ( 'enabled', force, true );
-
-};
-
 const disable = (): void => {
 
   toggle ( false );
@@ -54,6 +46,22 @@ const enable = (): void => {
 
 };
 
+const toggle = ( force?: boolean ): void => {
+
+  force ??= !getOptions ().enabled;
+
+  vscode.workspace.getConfiguration ( 'outdated' ).update ( 'enabled', force, true );
+
+};
+
+const toggleBadges = ( force?: boolean ): void => {
+
+  force ??= !getOptions ().badges.enabled;
+
+  vscode.workspace.getConfiguration ( 'outdated' ).update ( 'badges.enabled', force, true );
+
+};
+
 const refresh = (): void => {
 
   Lens.refresh ();
@@ -62,4 +70,4 @@ const refresh = (): void => {
 
 /* EXPORT */
 
-export {bump, toggle, disable, enable, refresh};
+export {bump, disable, enable, toggle, toggleBadges, refresh};

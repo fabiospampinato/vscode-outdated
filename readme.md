@@ -20,12 +20,13 @@ ext install fabiospampinato.vscode-outdated
 
 ## Usage
 
-It adds 4 commands to the command palette:
+It adds 5 commands to the command palette:
 
 ```js
-'Outdated: Toggle' // Enable or disable the code lens
 'Outdated: Disable' // Disable the code lens
 'Outdated: Enable' // Enable the code lens
+'Outdated: Toggle' // Enable or disable the code lens
+'Outdated: Toggle Badges' // Enable or disable the inline badges
 'Outdated: Refresh' // Force refresh the code lens
 ```
 
