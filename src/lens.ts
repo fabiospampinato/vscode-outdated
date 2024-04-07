@@ -60,8 +60,12 @@ class CodeLensProvider implements vscode.CodeLensProvider {
         const line = document.lineAt ( document.positionAt ( lineMatch.index ).line );
         const next = `${currentSections.prefix}${versionNext}`;
 
+        const hasBadges = true; //TODO: Add a setting for this
+        const badgeCurrent = hasBadges ? '$(circle-filled)' : '';
+        const badgeNext = hasBadges ? '$(circle-outline)' : '';
+
         const lens = new vscode.CodeLens ( line.range, {
-          title: ( current === next ) ? 'latest' : `update to ${next}`,
+          title: ( current === next ) ? `${badgeCurrent}latest` : `${badgeNext}update to ${next}`,
           command: 'outdated.bump',
           arguments: [uri, name, current, next]
         });
